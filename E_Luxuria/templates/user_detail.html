@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="img/favicon.ico" rel="icon">
+    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+
+    <style>
+      #exampleDatepicker1{
+        height: 30px; width: 400px;
+      }
+      .signup{
+        background-image: url({% static 'img/signup1.jpg' %});
+      }
+    </style>
+</head>
+<body>
+  <section class="h-200 signup" >
+    <div class="container py-5">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-6 col-xl-6">
+          <div class="card rounded-3" style="height: 500px;">
+            
+            <div class="card-body p-3 p-md-0" style="height: 500px;">
+              <form method="POST" action="{% url 'update' %}" 
+              enctype="multipart/form-data">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-1 px-md-1">Update User Information</h3>
+              
+  
+              
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

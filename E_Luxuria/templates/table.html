@@ -1,0 +1,37 @@
+<table border='1'>
+    <thead>
+        <th>Sno.</th>
+        <th>name</th>
+        <th>email</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>MobileNo</th>
+        <th>Gender</th>
+        <th>Country</th>
+        <th>State</th>
+        <th>PIN</th>
+        <th>Action</th>
+    </thdead>
+ <tbody>
+    {% for i in data %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.Password}}</td>
+        <td>{{i.Address}}</td>
+        <td>{{i.Mobile_No}}</td>
+        <td>{{i.Gender}}</td>
+        <td>{{i.Country}}</td>
+        <td>{{i.State}}</td>
+        <td>{{i.PIN}}</td>
+        <td><a class="btn btn-sm bg-primary text-white mr-2" href="{% url 'edit_user' i.id %}">Edit</a>
+            <a class="btn btn-sm bg-danger text-white" href="{% url 'delete_user' i.id %}">Delete</a>
+            {% if i.status == 0 %}
+            <a class="btn btn-sm bg-danger text-white" href="{% url 'retrive_user' i.id %}">Retrive</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endfor %}
+ </tbody>
+</table>

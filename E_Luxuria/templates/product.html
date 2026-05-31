@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Product description
+        </title>
+    </head>
+    <body>
+        <div class="prod">
+            <h2>All Product</h2>
+        {% for i in product %}
+        <p>Product Name: {{i.product_name}}</p>
+        <img src="../../media/{{i.product_img}}" style="width:500px;height:500px;" />
+        <p>MRP. Rs.{{i.product_price}}/-</p>
+        <p>Offer Price : Rs. {{i.product_oprice}}/-</p>
+        <p>description: <br>{{i.product_description}}</p>
+        <p>GST: {{i.product_gst}}%</p>
+        <p>Discount : {{i.product_dprice}}%</p>
+        <form method="POST" action="{% url 'cart' %}">
+            {% csrf_token %}
+            {% comment %} {% if 'email' in request.session %} {% endcomment %}
+            <input type='hidden' name='qty' value='1'>
+            <input type='hidden' name='pid' value="{{i.id}}">
+            <input type='hidden' name='uid' value='1'>
+            <input type='submit' value='Add To Cart'>
+            {% comment %} {% endif %}
+            {% endcomment %}
+        </form>
+        <hr>
+        {% endfor  %}
+        </div>
+    </body>
+    </html>

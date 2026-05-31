@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="img/favicon.ico" rel="icon">
+    
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
+
+    <style>
+      
+      .signup{
+        background-image: url({% static 'img/signup1.jpg' %});
+        background-size: cover;
+      }
+      .form-control{
+        margin-bottom: 48.7px;
+      }
+    </style>
+</head>
+<body>
+  <section class="signup" >
+    <div class="container py-5">
+      <div class="row justify-content-center ">
+        <div class="col-lg-6 col-xl-6">
+          <div class="card rounded-3">
+            
+            <div class="card-body p-3 p-md-0">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-1 px-md-1">Sign Up</h3>
+              <h3 class="mb-2 pb-2 pb-md-0 mb-md-1 px-md-1">Create an Account</h3>
+  
+              <form class=" text-dark " method="POST" action="{% url 'Signup' %}">
+                 {% csrf_token %}
+                
+                 <div class="row justify-content-center">
+                  <div class="col-md-10">
+
+                    <div class="form-outline ">
+                      <label class="form-label" for="form3Example1q">name</label>
+                      <input type="text" name="name" id="form3Example1q" class="form-control" />
+                    </div>
+
+                    <div class="form-outline Email">
+                      <label for="exampleDatepicker1" class="form-label">Email</label>
+                      <input type="text" name="email" class="form-control"  id="exampleDatepicker1" />
+                    </div>
+                   
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <label for="exampleDatepicker1" class="form-label">Password</label>
+                        <input type="text" name="Password" class="form-control" placeholder="">
+                      </div>
+                      <div class="col-md-6">
+                        <label for="exampleDatepicker1" class="form-label">Confirm Password</label>
+                        <input type="text" name="Confirm_Password" class="form-control" placeholder="">
+                      </div>
+                    </div>
+                    
+                
+                   <div class="row justify-content-center">
+                      <div class="col-md-4">
+                        <label for="exampleDatepicker1" class="form-label">Address</label>
+                        <input type="text" name="Address" class="form-control"  placeholder="">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="exampleDatepicker1" class="form-label">Mobile No.</label>
+                        <input type="text" name="Mobile_No" class="form-control"  placeholder="">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="exampleDatepicker1" class="form-label">PIN code</label>
+                        <input type="text" name="PIN" class="form-control"  placeholder="">
+                      </div>
+                    </div> 
+                    
+                  </div>
+                   <div class="col-md-10 mb-0">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <select class="select form-control" name="Gender">
+                      
+                            <option value="1">Gender</option>
+                            <option value="2">Female</option>
+                            <option value="3">Male</option>
+                            <option value="4">Other</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <select class="select form-control" name="Country">
+                      
+                            <option value="1">Country</option>
+                            <option value="2">India</option>
+                            <option value="3">U.S.A</option>
+                            <option value="4">France</option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                          <select class="select form-control" name="State">
+                      
+                            <option value="1">State</option>
+                            <option value="2">Jharkhand</option>
+                            <option value="3">Delhi</option>
+                            <option value="4">Mumbai</option>
+                          </select>
+                        </div>
+                      </div>
+                    
+
+                   
+                    
+                    </div>
+                   
+                  
+                </div>
+  
+                
+                <div class="row justify-content-center">
+                  
+                  <input style="width: 140px; margin-top: 30px;  background-color:darkolivegreen;" type="submit" value="Submit"/>
+                </div>
+  
+                
+  
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

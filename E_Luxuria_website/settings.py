@@ -125,3 +125,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = '/home/kumarmohit/E_Luxuria_website/staticfiles'
+ALLOWED_HOSTS = ['kumarmohit.pythonanywhere.com']
+STATIC_URL = '/static/'

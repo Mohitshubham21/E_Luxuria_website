@@ -1,0 +1,17 @@
+@media (min-width: 1025px) {
+  .h-custom {
+  height: 100vh !important;
+  }
+  }
+  .card {
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    min-width: 20px;
+    word-wrap: break-word;
+    background-color: transparent;
+    background-clip: border-box;
+    border: 2px solid rgba(225, 225, 225, 0.5);
+    backdrop-filter: blur(20px);
+    padding-bottom: 20px;
+}

@@ -50,9 +50,9 @@
                         <div class="navbar-nav ml-auto py-0">
                             
                             {% if 'email' in request.session %}
-                            <a href="{% url 'Signout' %}"><button style="margin-right: 20px;">Signout</button></a>
+                            <a href="{% url 'Signout' %}"><button style="margin-right: 20px;">Logout</button></a>
                             {% else %}
-                            <a href="{% url 'Signin' %}"><button style="margin-right: 20px;">Signin</button></a>
+                            <a href="{% url 'Signin' %}"><button style="margin-right: 20px;">Login</button></a>
                             <a href="{% url 'Signup' %}"><button>Signup</button></a>
                             {% endif %}
                         </div>

@@ -1,90 +1,82 @@
 <!DOCTYPE html>
 {% load static %}
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>About Us - E Luxuria</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  <style>
+    body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; }
+    .about-section { padding: 60px 100px; text-align: center; }
+    .about-section h1 { font-size: 36px; margin-bottom: 20px; }
+    .about-section p { font-size: 15px; line-height: 1.8; color: #555; text-align: justify; }
+    .about-img { width: 60%; height: 400px; object-fit: cover; display: block; margin: 30px auto; border-radius: 10px; }
+    h2.team-title { text-align: center; font-size: 30px; margin: 40px 0 20px; }
+    .row { display: flex; justify-content: center; gap: 30px; padding: 20px 60px 60px; flex-wrap: wrap; align-items: stretch; }
+    .column { flex: 1; min-width: 250px; max-width: 300px; display: flex; }
+    .card { box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; overflow: hidden; text-align: center; background: #fff; width: 100%; display: flex; flex-direction: column; }
+    .team-img { width: 100%; height: 250px; object-fit: cover; object-position: 60% 20%; }
+    .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; align-items: center; }
+    .card-body h2 { font-size: 18px; margin: 10px 0 5px; }
+    .card-body .title { color: #888; font-size: 13px; margin-bottom: 10px; }
+    .card-body p { font-size: 13px; color: #555; margin: 5px 0; }
+    .button { background-color: #333; color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 5px; margin-top: auto; font-size: 14px; }
+    .button:hover { background-color: #e77600; }
+  </style>
 </head>
 <body>
   <div class="about-section">
-  <h1>About Us Page</h1>
-  <p>‘E Luxirious’ <br>
+    <h1>About Us</h1>
+    <p>At 'E Luxuria', all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you. We present to you the most up to date – it's in-season and on-trend; if it's on the racks, it's on the web.</p>
+    <br>
+    <p>Barely a year from launch, 'E Luxuria' is already in the Top 20, and one of the fastest growing e-commerce companies in the nation. Offering flexibility in the way you shop, 'E Luxuria' is a first-of-its-kind Phygital marketplace that serves more than one million customers.</p>
+    <br>
+    <p>The journey starts online. Engage with us in a seamless shopping experience across desktop, tablet and mobile. Browse the best brands across clothing and accessories including watches, bags, shoes, jewellery and more.</p>
+    <br>
+    <p>'E Luxuria' Luxury is the nation's sole online luxury destination. Stocking clothing and accessories – including shoes, bags, belts and watches – from the best international luxury brands, as well as designs from India's best designers.</p>
+  </div>
 
-    At ‘E Luxirious’ , all that you see is hand-picked and 100% true – sourced straight from the best brands and their approved affiliates from US and over the world, only for you.
-    
-    We present to you the most up to date – it’s in-season and on-incline; if it’s on the racks, it’s on the web. Also, it’s nowest – have it conveyed ASAP to you, from a store close you, when you utilize our Phygital services.
-    
-    It’s New and Now
-    
-    Barely a year from dispatch, ‘E Luxirious’ is as of now in the Top 20, and one of the quickest developing, web based business organizations in the nation.
-    
-    Offering adaptability in the manner in which you shop, ‘E Luxirious’ is a first-of-its-kind Phygital commercial center that serves more than one million clients.
-    
-    
-    
-    The voyage starts on the web. Draw in with us in a consistent shopping knowledge crosswise over work area, tablet and cell phone. Peruse the best US and universal brands crosswise over garments and frill (watches, sacks, shoes, adornments and then some), devices and home machines.
-    
-    At that point run disconnected with us. Taking advantage of our solid image accomplice arrange, we have made a Phygital encounter that consolidates the simplicity of shopping on the web with the consolation of purchasing from a physical store. Utilize our Quick Pick, Quick Exchange and Quick Finder administrations to shop from crosswise over 2,400 stores and 150 accomplice brands to get or return what you’ve purchased, in-store.
-    
-    Additionally, draw in with our influencers on famous magazine name , which is the place for genuine exhortation from genuine individuals. Get their interpretation of design, tech and life.
-    
-    ‘E Luxirious’ Luxury is the nation’s sole online extravagance goal. Stocking clothing and extras – including shoes, packs, belts and watches – from the best global extravagance marks, just as plans from US’s best fashioners, the extravagance encounter reaches out to our Luxe Boxes, which make for liberal gifting alternatives, regardless of what the event.
-    
-    We mean to use the heritage of the Parent Organization name, which has set the standard for extravagance and sterling administration with marquee names to make an entryway to top of the line mold, flawless items and an incredible ordeal. We’ll be the first to inform you concerning new dispatches and accumulations and, obviously, bring you special features.
-    
-    This since we need you to be completely, totally and absolutely upbeat about what you purchase.
-    
-    </p>
-  <p>Venture into the universe of form with ‘Organization Name’ , a one-stop online mold entrance. Our comprehensive ladies’ wear alter is propelled by worldwide runways, VIP looks and on-drift road style. Internet looking for men also accompanies the guarantee of acclaimed names without the substantial sticker prices.</p>
-</div>
-<div>
-<img src="{% static 'img/istockphoto-530420392-500x500.jpg' %}" class="about-img">
+  <img src="{% static 'img/istockphoto-530420392-612x612.jpg' %}" class="about-img">
 
-
-</div>
-<h2 style="text-align:center">Our Team</h2>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="{% static 'img/mohit.jpg' %}" alt="Jane" class="team-img">
-      <div class="container">
-        <h2>Kumar Mohit</h2>
-        <p class="title">CEO & Founder</p>
-        <p>Manages and direts the company toward its primary goals and objectives.</p>
-        <p>kumars@example.com</p>
-        <p><button class="button">Contact</button></p>
+  <h2 class="team-title">Our Team</h2>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'img/mohit.jpg' %}" class="team-img">
+        <div class="card-body">
+          <h2>Kumar Mohit</h2>
+          <p class="title">CEO & Founder</p>
+          <p>Manages and directs the company toward its primary goals and objectives.</p>
+          <p>kumars@example.com</p>
+          <button class="button">Contact</button>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'img/mohit1.jpg' %}" class="team-img">
+        <div class="card-body">
+          <h2>Shubham Ambastha</h2>
+          <p class="title">Art Director</p>
+          <p>Inspire and guide the vision of the design team.</p>
+          <p>shubham@example.com</p>
+          <button class="button">Contact</button>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <img src="{% static 'img/mohit3.jpg' %}" class="team-img">
+        <div class="card-body">
+          <h2>Pearl V Puri</h2>
+          <p class="title">Designer</p>
+          <p>Communicate ideas that inspire and captivate consumers.</p>
+          <p>pearl@example.com</p>
+          <button class="button">Contact</button>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="{% static 'img/mohit1.jpg' %}" alt="Mike" class="team-img">
-      <div class="container">
-        <h2>Shubham Ambastha</h2>
-        <p class="title">Art Director</p>
-        <p>Inspire and guide the vision of the design team.</p>
-        <p>shubham@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <img src="{% static 'img/mohit3.jpg' %}" alt="John" class="team-img">
-      <div class="container">
-        <h2>Pearl V Puri</h2>
-        <p class="title">Designer</p>
-        <p>Communicate ideas that inspire and captivate consumers</p>
-        <p>pearl@example.com</p>
-        <p><button class="button">Contact</button></p>
-      </div>
-    </div>
-  </div>
-</div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib import messages
 from django.http import HttpResponse
 from . models import *
 
@@ -26,7 +27,9 @@ def Signin(request):
             
         else:
             
-            return HttpResponse('Login Failed')
+            from django.contrib import messages
+        messages.error(request,'Wrong email or password! Please try again.')
+        return redirect('Signin')
             
             
     data={'title':'Login'}
@@ -50,7 +53,7 @@ def Signup(request):
         State = request.POST['State']
         PIN = request.POST['PIN']  
         data = Register.objects.create(name=name,email=email,Password=Password,Mobile_No=Mobile_No,Address=Address,Gender=Gender,Country=Country,State=State,PIN=PIN)
-        return redirect('index')  
+        return redirect('Signin')  
 
     return render(request,'signup.html')
 

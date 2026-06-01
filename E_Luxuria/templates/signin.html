@@ -4,39 +4,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
-    <link href="img/favicon.ico" rel="icon">
-    <link rel="stylesheet" href="{% static 'css/style1.css' %}"/>
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
+    <title>Login - E Luxuria</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      body {
+        background-image: url({% static 'img/signin.jpg' %});
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+      .login-card {
+        background: rgba(255,255,255,0.88);
+        padding: 40px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      }
+      .login-card h1 { text-align: center; margin-bottom: 25px; font-size: 28px; }
+      .form-group { margin-bottom: 18px; }
+      .form-group label { font-weight: 600; font-size: 14px; display: block; margin-bottom: 5px; }
+      .input-group { display: flex; }
+      .input-group input { flex: 1; padding: 10px 12px; border: 1px solid #ccc; border-radius: 5px 0 0 5px; font-size: 14px; outline: none; }
+      .input-group input:focus { border-color: #e77600; }
+      .input-group-text { padding: 10px 12px; background: #eee; border: 1px solid #ccc; border-left: none; border-radius: 0 5px 5px 0; cursor: pointer; }
+      .simple-input { width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; outline: none; box-sizing: border-box; }
+      .simple-input:focus { border-color: #e77600; }
+      .error-msg { color: red; font-size: 12px; margin-top: 4px; display: none; }
+      .btn-login { width: 100%; padding: 12px; background: darkolivegreen; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; margin-top: 10px; }
+      .btn-login:hover { background: #4a6741; }
+      .signup-link { text-align: center; margin-top: 15px; font-size: 14px; }
+      .signup-link a { color: #e77600; text-decoration: none; font-weight: 600; }
+      {% if messages %}
+      .server-error { background: #ffe0e0; border: 1px solid red; color: red; padding: 10px; border-radius: 5px; margin-bottom: 15px; font-size: 14px; text-align: center; }
+      {% endif %}
+    </style>
 </head>
-<body style="background-image: url({% static 'img/signin.jpg' %});">
-  <div class="container">
-    <form action="{% url 'Signin' %}" id="container" method="POST" >
+<body>
+  <div class="login-card">
+    <h1>Login</h1>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="server-error">{{ message }}</div>
+    {% endfor %}
+    {% endif %}
+
+    <form action="{% url 'Signin' %}" method="POST" onsubmit="return validateForm()">
       {% csrf_token %}
-      <h1>Login</h1>
-  
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Enter Email" name="email" required>
-  
-      <label for="Password"><b>Password</b></label>
-      <input type="Password" placeholder="Enter Password" name="Password" required>
-  
-      <button type="submit" class="btn">Login</button>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" id="email" class="simple-input"
+          placeholder="Enter your email e.g. example@gmail.com"
+          pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+          oninvalid="this.setCustomValidity('Please enter a valid email e.g. example@gmail.com')"
+          oninput="this.setCustomValidity(''); hideError('email-error')"
+          required>
+        <p class="error-msg" id="email-error">Please enter a valid email address!</p>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-group">
+          <input type="password" name="Password" id="password"
+            placeholder="Enter your password"
+            oninput="hideError('pass-error')"
+            required>
+          <span class="input-group-text" onclick="togglePassword()">
+            <i class="fa fa-eye" id="eye-icon"></i>
+          </span>
+        </div>
+        <p class="error-msg" id="pass-error">Password must be at least 8 characters!</p>
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+
+      <div class="signup-link">
+        Don't have an account? <a href="{% url 'Signup' %}">Sign Up</a>
+      </div>
     </form>
   </div>
+
+  <script>
+    function togglePassword() {
+      var x = document.getElementById("password");
+      var eye = document.getElementById("eye-icon");
+      if (x.type === "password") {
+        x.type = "text";
+        eye.className = "fa fa-eye-slash";
+      } else {
+        x.type = "password";
+        eye.className = "fa fa-eye";
+      }
+    }
+
+    function hideError(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    function validateForm() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var valid = true;
+
+      var emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("email-error").style.display = "block";
+        valid = false;
+      }
+
+      if (password.length < 8) {
+        document.getElementById("pass-error").style.display = "block";
+        valid = false;
+      }
+
+      return valid;
+    }
+  </script>
 </body>
 </html>

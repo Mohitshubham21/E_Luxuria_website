@@ -4,148 +4,222 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="img/favicon.ico" rel="icon">
-    
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
+    <title>Sign Up - E Luxuria</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="{% static 'css/style3.css' %}">
-
     <style>
-      
-      .signup{
+      body { margin: 0; padding: 0; }
+      .signup {
         background-image: url({% static 'img/signup1.jpg' %});
         background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0;
       }
-      .form-control{
-        margin-bottom: 48.7px;
-      }
+      .card { border-radius: 10px; padding: 30px; background: rgba(255,255,255,0.85); width: 100%; max-width: 600px; }
+      .form-group { margin-bottom: 15px; }
+      .form-group label { font-weight: 600; font-size: 14px; }
+      .form-control { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; }
+      .input-group { display: flex; }
+      .input-group .form-control { border-radius: 5px 0 0 5px; }
+      .input-group-text { padding: 8px 12px; background: #eee; border: 1px solid #ccc; border-left: none; border-radius: 0 5px 5px 0; cursor: pointer; }
+      .row { display: flex; gap: 10px; }
+      .col { flex: 1; }
+      .hint-box { display: none; background: #fff3cd; border: 1px solid #ffc107; border-radius: 5px; padding: 8px; font-size: 12px; margin-top: 5px; }
+      .hint-box ul { margin: 0; padding-left: 18px; }
+      #pass-msg { font-size: 12px; margin-top: 5px; font-weight: 600; }
+      .btn-submit { width: 150px; padding: 10px; background: darkolivegreen; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; display: block; margin: 20px auto 0; }
+      .btn-submit:hover { background: #4a6741; }
+      select.form-control { background: white; }
     </style>
 </head>
 <body>
-  <section class="signup" >
-    <div class="container py-5">
-      <div class="row justify-content-center ">
-        <div class="col-lg-6 col-xl-6">
-          <div class="card rounded-3">
-            
-            <div class="card-body p-3 p-md-0">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-1 px-md-1">Sign Up</h3>
-              <h3 class="mb-2 pb-2 pb-md-0 mb-md-1 px-md-1">Create an Account</h3>
-  
-              <form class=" text-dark " method="POST" action="{% url 'Signup' %}">
-                 {% csrf_token %}
-                
-                 <div class="row justify-content-center">
-                  <div class="col-md-10">
+  <section class="signup">
+    <div class="card">
+      <h3>Sign Up</h3>
+      <h5>Create an Account</h5>
+      <form method="POST" action="{% url 'Signup' %}">
+        {% csrf_token %}
 
-                    <div class="form-outline ">
-                      <label class="form-label" for="form3Example1q">name</label>
-                      <input type="text" name="name" id="form3Example1q" class="form-control" />
-                    </div>
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" class="form-control" required>
+        </div>
 
-                    <div class="form-outline Email">
-                      <label for="exampleDatepicker1" class="form-label">Email</label>
-                      <input type="text" name="email" class="form-control"  id="exampleDatepicker1" />
-                    </div>
-                   
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" name="email" class="form-control" required
+            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+            title="Please enter a valid email e.g. example@gmail.com"
+            oninvalid="this.setCustomValidity('Please enter a valid email e.g. example@gmail.com')"
+            oninput="this.setCustomValidity('')">
+        </div>
 
-                    <div class="row">
-                      <div class="col-md-6">
-                        <label for="exampleDatepicker1" class="form-label">Password</label>
-                        <input type="text" name="Password" class="form-control" placeholder="">
-                      </div>
-                      <div class="col-md-6">
-                        <label for="exampleDatepicker1" class="form-label">Confirm Password</label>
-                        <input type="text" name="Confirm_Password" class="form-control" placeholder="">
-                      </div>
-                    </div>
-                    
-                
-                   <div class="row justify-content-center">
-                      <div class="col-md-4">
-                        <label for="exampleDatepicker1" class="form-label">Address</label>
-                        <input type="text" name="Address" class="form-control"  placeholder="">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="exampleDatepicker1" class="form-label">Mobile No.</label>
-                        <input type="text" name="Mobile_No" class="form-control"  placeholder="">
-                      </div>
-                      <div class="col-md-4">
-                        <label for="exampleDatepicker1" class="form-label">PIN code</label>
-                        <input type="text" name="PIN" class="form-control"  placeholder="">
-                      </div>
-                    </div> 
-                    
-                  </div>
-                   <div class="col-md-10 mb-0">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <select class="select form-control" name="Gender">
-                      
-                            <option value="1">Gender</option>
-                            <option value="2">Female</option>
-                            <option value="3">Male</option>
-                            <option value="4">Other</option>
-                          </select>
-                        </div>
-                        <div class="col-md-4">
-                          <select class="select form-control" name="Country">
-                      
-                            <option value="1">Country</option>
-                            <option value="2">India</option>
-                            <option value="3">U.S.A</option>
-                            <option value="4">France</option>
-                          </select>
-                        </div>
-                        <div class="col-md-4">
-                          <select class="select form-control" name="State">
-                      
-                            <option value="1">State</option>
-                            <option value="2">Jharkhand</option>
-                            <option value="3">Delhi</option>
-                            <option value="4">Mumbai</option>
-                          </select>
-                        </div>
-                      </div>
-                    
-
-                   
-                    
-                    </div>
-                   
-                  
-                </div>
-  
-                
-                <div class="row justify-content-center">
-                  
-                  <input style="width: 140px; margin-top: 30px;  background-color:darkolivegreen;" type="submit" value="Submit"/>
-                </div>
-  
-                
-  
-              </form>
-  
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Password</label>
+              <div class="input-group">
+                <input type="password" name="Password" class="form-control" id="password"
+                  onfocus="document.getElementById('hint-box').style.display='block'"
+                  oninput="validatePassword()">
+                <span class="input-group-text" onclick="togglePassword('password','eye1')">
+                  <i class="fa fa-eye" id="eye1"></i>
+                </span>
+              </div>
+              <div class="hint-box" id="hint-box">
+                <ul>
+                  <li>At least 8 characters</li>
+                  <li>At least 1 uppercase letter</li>
+                  <li>At least 1 number</li>
+                  <li>At least 1 special character (!@#$%)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Confirm Password</label>
+              <div class="input-group">
+                <input type="password" name="Confirm_Password" class="form-control" id="cpassword"
+                  oninput="validatePassword()">
+                <span class="input-group-text" onclick="togglePassword('cpassword','eye2')">
+                  <i class="fa fa-eye" id="eye2"></i>
+                </span>
+              </div>
+              <p id="pass-msg"></p>
             </div>
           </div>
         </div>
-      </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Address</label>
+              <input type="text" name="Address" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Mobile No.</label>
+              <input type="text" name="Mobile_No" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>PIN Code</label>
+              <input type="text" name="PIN" class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Gender</label>
+              <select name="Gender" class="form-control">
+                <option value="">Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Country</label>
+              <select name="Country" class="form-control">
+                <option value="">Country</option>
+                <option>Afghanistan</option><option>Albania</option><option>Algeria</option>
+                <option>Argentina</option><option>Australia</option><option>Austria</option>
+                <option>Bangladesh</option><option>Belgium</option><option>Brazil</option>
+                <option>Canada</option><option>Chile</option><option>China</option>
+                <option>Colombia</option><option>Denmark</option><option>Egypt</option>
+                <option>Finland</option><option>France</option><option>Germany</option>
+                <option>Ghana</option><option>Greece</option><option>India</option>
+                <option>Indonesia</option><option>Iran</option><option>Iraq</option>
+                <option>Ireland</option><option>Israel</option><option>Italy</option>
+                <option>Japan</option><option>Jordan</option><option>Kenya</option>
+                <option>Malaysia</option><option>Mexico</option><option>Morocco</option>
+                <option>Nepal</option><option>Netherlands</option><option>New Zealand</option>
+                <option>Nigeria</option><option>Norway</option><option>Pakistan</option>
+                <option>Philippines</option><option>Poland</option><option>Portugal</option>
+                <option>Qatar</option><option>Russia</option><option>Saudi Arabia</option>
+                <option>Singapore</option><option>South Africa</option><option>South Korea</option>
+                <option>Spain</option><option>Sri Lanka</option><option>Sweden</option>
+                <option>Switzerland</option><option>Thailand</option><option>Turkey</option>
+                <option>UAE</option><option>Uganda</option><option>Ukraine</option>
+                <option>United Kingdom</option><option>USA</option><option>Vietnam</option>
+              </select>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>State</label>
+              <select name="State" class="form-control">
+                <option value="">State</option>
+                <option>Andhra Pradesh</option><option>Arunachal Pradesh</option>
+                <option>Assam</option><option>Bihar</option><option>Chhattisgarh</option>
+                <option>Goa</option><option>Gujarat</option><option>Haryana</option>
+                <option>Himachal Pradesh</option><option>Jharkhand</option>
+                <option>Karnataka</option><option>Kerala</option>
+                <option>Madhya Pradesh</option><option>Maharashtra</option>
+                <option>Manipur</option><option>Meghalaya</option><option>Mizoram</option>
+                <option>Nagaland</option><option>Odisha</option><option>Punjab</option>
+                <option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option>
+                <option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option>
+                <option>Uttarakhand</option><option>West Bengal</option><option>Delhi</option>
+                <option>Jammu and Kashmir</option><option>Ladakh</option><option>Puducherry</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
     </div>
   </section>
+
+  <script>
+    function togglePassword(id, eyeId) {
+      var x = document.getElementById(id);
+      var eye = document.getElementById(eyeId);
+      if (x.type === "password") {
+        x.type = "text";
+        eye.className = "fa fa-eye-slash";
+      } else {
+        x.type = "password";
+        eye.className = "fa fa-eye";
+      }
+    }
+
+    function validatePassword() {
+      var p = document.getElementById("password").value;
+      var cp = document.getElementById("cpassword").value;
+      var msg = document.getElementById("pass-msg");
+      if (p.length < 8) {
+        msg.innerHTML = "Min 8 characters required";
+        msg.style.color = "red";
+      } else if (!/[A-Z]/.test(p)) {
+        msg.innerHTML = "Add at least 1 uppercase letter";
+        msg.style.color = "red";
+      } else if (!/[0-9]/.test(p)) {
+        msg.innerHTML = "Add at least 1 number";
+        msg.style.color = "red";
+      } else if (!/[!@#$%^&*]/.test(p)) {
+        msg.innerHTML = "Add at least 1 special character";
+        msg.style.color = "red";
+      } else if (p !== cp) {
+        msg.innerHTML = "Passwords do not match!";
+        msg.style.color = "red";
+      } else {
+        msg.innerHTML = "✓ Passwords match!";
+        msg.style.color = "green";
+      }
+    }
+  </script>
 </body>
 </html>

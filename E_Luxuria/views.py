@@ -5,9 +5,7 @@ from . models import *
 
 # Create your views here.
 def index(request):
-    #return HttpResponse('Hello World')
     data={'title':'home | E_Luxuria_website'}
-    # user=Register.objects.filter(email=request.session['email'].first())
     return render(request,'index.html',data)
     
 def About(request):
@@ -37,7 +35,8 @@ def Signin(request):
     
 
 def Shop(request):
-    return render(request,'shop.html')
+    products=Product.objects.filter(status=1)
+    return render(request,'shop.html',{'products':products})
 
 
 
@@ -110,14 +109,15 @@ def Signout(request):
     return redirect('index')
 
 def cart(request):
-    # if request.method=='POST':
-    #     pid=request.POST['pid']
-    #     uid=request.POST['uid']
-    #     qty=request.POST['qty']
-    #     # res=Cart.objects.create(pid=pid,uid=uid,qty=qty,status=1)
-    #     messages.add_message(request,messages.SUCCESS,'item added to cart successfullly!!')
-    #     return redirect('cart')
-    return render(request,'cart.html')
+    if request.method=='POST':
+        pid=request.POST['pid']
+        uid=request.POST['uid']
+        qty=request.POST['qty']
+        Cart.objects.create(pid=pid,uid=uid,qty=qty,status=1)
+        return redirect('cart')
+    cart_items=Cart.objects.filter(status=1)
+    data={'cart_items':cart_items}
+    return render(request,'cart.html',data)
 
 def product(request):
     product=Product.objects.filter(status=1)

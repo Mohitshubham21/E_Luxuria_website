@@ -1,31 +1,45 @@
-<html>
-    <head>
-        <title>Product description
-        </title>
-    </head>
-    <body>
-        <div class="prod">
-            <h2>All Product</h2>
-        {% for i in product %}
-        <p>Product Name: {{i.product_name}}</p>
-        <img src="../../media/{{i.product_img}}" style="width:500px;height:500px;" />
-        <p>MRP. Rs.{{i.product_price}}/-</p>
-        <p>Offer Price : Rs. {{i.product_oprice}}/-</p>
-        <p>description: <br>{{i.product_description}}</p>
-        <p>GST: {{i.product_gst}}%</p>
-        <p>Discount : {{i.product_dprice}}%</p>
-        <form method="POST" action="{% url 'cart' %}">
-            {% csrf_token %}
-            {% comment %} {% if 'email' in request.session %} {% endcomment %}
-            <input type='hidden' name='qty' value='1'>
-            <input type='hidden' name='pid' value="{{i.id}}">
-            <input type='hidden' name='uid' value='1'>
-            <input type='submit' value='Add To Cart'>
-            {% comment %} {% endif %}
-            {% endcomment %}
-        </form>
-        <hr>
-        {% endfor  %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E Luxuria</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+        .product-card { border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 250px; object-fit: cover; }
+        .product-card .card-body { padding: 15px; }
+        .btn-cart { background-color: aqua; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 14px; width: 100%; margin-top: 10px; }
+        .btn-cart:hover { background-color: #00cccc; }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h2 class="text-center mb-4">All Products</h2>
+        <div class="row">
+            {% for i in product %}
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="product-card">
+                    <img src="/media/{{ i.product_img }}" alt="{{ i.productname }}">
+                    <div class="card-body">
+                        <h5>{{ i.productname }}</h5>
+                        <p><s>Rs.{{ i.product_price }}</s> <strong>Rs.{{ i.product_oprice }}</strong></p>
+                        <p>{{ i.product_description }}</p>
+                        <p>GST: {{ i.product_gst }}% | Discount: {{ i.product_dprice }}%</p>
+                        <form method="POST" action="{% url 'cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="qty" value="1">
+                            <input type="hidden" name="pid" value="{{ i.id }}">
+                            <input type="hidden" name="uid" value="1">
+                            <button type="submit" class="btn-cart">Add To Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-    </body>
-    </html>
+    </div>
+</body>
+</html>

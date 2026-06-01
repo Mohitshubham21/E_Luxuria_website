@@ -9585,3 +9585,8 @@ a.text-dark:hover, a.text-dark:focus {
 .team-img { width: 100%; height: 250px; object-fit: cover; }
 .product-img img { height: 250px; object-fit: cover; }
 #navbar-vertical .nav-link { color: white !important; }
+.product-item .card-header img { object-position: center top !important; }
+.product-img img { object-fit: cover; height: 250px; width: 100%; object-position: top center !important; }
+.feature-box { display: flex; align-items: center; justify-content: center; height: 80px; }
+.d-flex.align-items-center.border { min-height: 80px; }
+.d-flex.align-items-center.border { min-height: 80px !important; max-height: 80px !important; }

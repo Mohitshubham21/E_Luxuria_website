@@ -48,7 +48,7 @@
                             <a href="{% url 'contact' %}" class="nav-item nav-link" style="background-color:aqua;">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
-                            
+
                             {% if 'email' in request.session %}
                             <a href="{% url 'Signout' %}"><button style="margin-right: 20px;">Logout</button></a>
                             {% else %}

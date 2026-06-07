@@ -1,34 +1,18 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title> E LUXURIA - Online Shopping Website</title>
+    <title>E LUXURIA - Kids</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <!-- Favicon -->
     <link href="{% static 'img/favicon.ico' %}" rel="icon">
-
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel=""
-
-    
 </head>
-
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid">
@@ -44,192 +28,254 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-dark px-2" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-dark pl-2" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
+                    <a class="text-dark px-2" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-dark px-2" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="text-dark px-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="text-dark px-2" href=""><i class="fab fa-instagram"></i></a>
+                    <a class="text-dark pl-2" href=""><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
-        <div class="row align-items-center py-3 px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
+        <div class="row align-items-center py-3 px-xl-5" style="background-color: darkred;">
+            <div class="col-lg-3 d-none d-lg-block" style="background-color: white;">
                 <a href="" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Luxuria</h1>
                 </a>
             </div>
->            <div class="col-lg-6 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                       
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                              
-                            </span>
-                        </div>
-                    </div>
-                </form>
+            <div class="col-md-8 ml-auto text-white">
+                <h1 class="text-white" style="font-size: 5rem; font-weight:300;">SALE FLAT 70% OFF</h1>
             </div>
-            <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
+            <div class="col-lg-3 col-6 text-right ml-auto">
+                <a href="" class="btn border"><i class="fas fa-heart text-primary"></i><span class="badge">0</span></a>
+                <a href="" class="btn border"><i class="fas fa-shopping-cart text-primary"></i><span class="badge">0</span></a>
             </div>
         </div>
     </div>
     <!-- Topbar End -->
 
-
     <!-- Navbar Start -->
-    
+    <div class="container-fluid mb-5">
+        <div class="row border-top px-xl-5" style="background-color:aqua;">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a class="btn shadow-none d-flex align-items-center justify-content-between text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px; background-color: lavenderblush;">
+                    <h6 class="m-0">Categories</h6>
+                    <i class="fa fa-angle-down text-dark"></i>
+                </a>
+                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
+                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px; background-color: black; color: white">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link text-white" data-toggle="dropdown">Dresses <i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
+                                <a href="{% url 'mens' %}" class="dropdown-item">Men's Dresses</a>
+                                <a href="{% url 'womens' %}" class="dropdown-item">Women's Dresses</a>
+                                <a href="{% url 'Kids' %}" class="dropdown-item">Kid's Dresses</a>
+                            </div>
+                        </div>
+                        <a href="" class="nav-item nav-link text-white">Beauty & Grooming</a>
+                        <a href="" class="nav-item nav-link text-white">Footwear</a>
+                        <a href="" class="nav-item nav-link text-white">Luggage & Trolleys</a>
+                        <a href="" class="nav-item nav-link text-white">Acessories</a>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-lg-9">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                    <a href="" class="text-decoration-none d-block d-lg-none">
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Luxuria</h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse" style="background-color:aqua;">
+                        <div class="navbar-nav mr-auto py-0" style="background-color:aqua;">
+                            <a href="{% url 'index' %}" class="nav-item nav-link">Home</a>
+                            <a href="{% url 'About' %}" class="nav-item nav-link">About</a>
+                            <a href="{% url 'Shop' %}" class="nav-item nav-link">Shop</a>
+                            <a href="{% url 'detail' %}" class="nav-item nav-link">Shop Detail</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <div class="dropdown-menu rounded-0 m-0">
+                                    <a href="{% url 'cart' %}" class="dropdown-item">Shopping Cart</a>
+                                    <a href="{% url 'checkout' %}" class="dropdown-item">Checkout</a>
+                                </div>
+                            </div>
+                            <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <div class="navbar-nav ml-auto py-0">
+                            {% if 'email' in request.session %}
+                            <a href="{% url 'Signout' %}"><button style="margin-right: 20px;">Logout</button></a>
+                            {% else %}
+                            <a href="{% url 'Signin' %}"><button style="margin-right: 20px;">Login</button></a>
+                            <a href="{% url 'Signup' %}"><button>Signup</button></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+                <div id="header-carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active" style="height: 410px;">
+                            <img class="img-fluid" src="{% static 'img/kids/kids1.jpg' %}" alt="Image" style="width:100%;height:410px;object-fit:cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">MIN.50% OFF</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">TINY STYLES, BIG BRANDS</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" style="height: 410px;">
+                            <img class="img-fluid" src="{% static 'img/kids/kids2.jpg' %}" alt="Image" style="width:100%;height:410px;object-fit:cover;">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <div class="p-3" style="max-width: 700px;">
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">Cute collection</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Introducing The Exclusive Newborn Launch</h3>
+                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-prev-icon mb-n2"></span>
+                        </div>
+                    </a>
+                    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                            <span class="carousel-control-next-icon mb-n2"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Navbar End -->
 
-
     <!-- Featured Start -->
-    <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+    <div class="container-fluid py-4" style="background-color:darkred;">
+        <div class="row px-xl-5 align-items-center justify-content-center">
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 text-center">
+                <div style="background:white;border:2px solid #ddd;border-radius:5px;padding:15px;">
+                    <img src="{% static 'img/kids/kids5.jpg' %}" style="max-height:80px;width:100%;object-fit:contain;">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
-                    <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 text-center">
+                <div style="background:white;border:2px solid #ddd;border-radius:5px;padding:15px;">
+                    <img src="{% static 'img/kids/kids6.jpg' %}" style="max-height:80px;width:100%;object-fit:contain;">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 text-center">
+                <div style="background:white;border:2px solid #ddd;border-radius:5px;padding:15px;">
+                    <img src="{% static 'img/kids/kids7.jpg' %}" style="max-height:80px;width:100%;object-fit:contain;">
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
-                    <h1 class="fa fa-phone-volume text-primary m-0 mr-3"></h1>
-                    <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            <div class="col-lg-3 col-md-6 col-sm-12 pb-1 text-center">
+                <div style="background:white;border:2px solid #ddd;border-radius:5px;padding:15px;">
+                    <img src="{% static 'img/kids/kids8.jpg' %}" style="max-height:80px;width:100%;object-fit:contain;">
                 </div>
             </div>
         </div>
     </div>
     <!-- Featured End -->
 
-    <div style="background-color: lightskyblue ; margin-left: 120px; margin-right: 120px;">
-        <marquee class="text-dark" style="font-size: large;">Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,</marquee>
+    <div style="background-color:indianred; margin-left: 120px; margin-right: 120px;">
+        <marquee class="text-center" style="font-size: large;color: chartreuse;">Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,Hurry Up ROCK THE PRICES,</marquee>
     </div>
-<div class="container">
-    <div class="position-relative bg-primary text-center text-md-centre text-white py-5 px-5">
-        <div class="position-relative bg-secondary text-center text-md-centre text-white mb-2 py-10 px-10">
-    <h1>Kids Collection </h1>
-        </div>
-    </div>
+
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-center my-0" style="background-color: lightskyblue; color: black;"> 
-                #StayStylish with the Hottest Sale of the Year
+        <div class="position-relative bg-primary text-center text-md-centre text-white py-5 px-5">
+            <div class="position-relative bg-secondary text-center text-md-centre text-white mb-2 py-10 px-10">
+                <h1>Kids Collection</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center my-0" style="background-color:indianred; color:cornsilk;">
+                    #StayStylish with the Hottest Sale of the Year
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- Categories Start -->
     <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
+        <div class="row px-xl-5 pb-3" style="background-color: blueviolet;">
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
+                    <!--<p class="text-right">15 Products</p>-->
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/kids/kids3.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'img/kids/kids3.jpg' %}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">DUNGAREE</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
+                    <!--<p class="text-right">15 Products</p>-->
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Mens/tshirt.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'img/kids/kids9.jpg' %}" alt="">
+                    </a>
+                    <h5 class="font-weight-semi-bold m-0">Shirts</h5>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+                    <!--<p class="text-right">15 Products</p>-->
+                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
+                        <img class="img-fluid" src="{% static 'img/kids/kids10.jpg' %}" alt="">
                     </a>
                     <h5 class="font-weight-semi-bold m-0">T-shirts</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
+                    <!--<p class="text-right">15 Products</p>-->
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Mens/a1ef0157d940c61341e4646f1bb3da2f.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'img/kids/kids11.jpg' %}" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Jeans</h5>
+                    <h5 class="font-weight-semi-bold m-0">Denim Floral Skirt</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
+                    <!--<p class="text-right">15 Products</p>-->
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Mens/formal suits.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'img/kids/kids12.jpg' %}" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Formal Suits</h5>
+                    <h5 class="font-weight-semi-bold m-0">Partywear Frock</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
+                    <!--<p class="text-right">15 Products</p>-->
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Mens/kurta.jpg" alt="">
+                        <img class="img-fluid" src="{% static 'img/kids/kids13.jpg' %}" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Kurta Pajama</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="img/Mens/shoes.jpg" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0"> Formal Shoes</h5>
+                    <h5 class="font-weight-semi-bold m-0">Dangri</h5>
                 </div>
             </div>
         </div>
     </div>
     <!-- Categories End -->
 
-
     <!-- Offer Start -->
     <div class="container-fluid offer pt-5">
         <div class="row px-xl-5">
             <div class="col-md-6 pb-4">
                 <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                    <img src="img/Mens/spring collection.jpg" alt="">
+                    <img src="{% static 'img/kids/kids14.jpg' %}" alt="">
                     <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Spring Collection</h1>
+                        <h5 class="text-uppercase text-primary mb-3">30% off the all order</h5>
+                        <h1 class="mb-4 font-weight-semi-bold">Kids Summer Collection</h1>
                         <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 pb-4">
                 <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                    <img src="img/Mens/winter collection.jpg" alt="">
+                    <img src="{% static 'img/kids/kids15.jpg' %}" alt="">
                     <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Winter Collection</h1>
+                        <h5 class="text-uppercase text-primary mb-3">50% off the all order</h5>
+                        <h1 class="mb-4 font-weight-semi-bold">New Born Collection</h1>
                         <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
                     </div>
                 </div>
@@ -237,7 +283,6 @@
         </div>
     </div>
     <!-- Offer End -->
-
 
     <!-- Products Start -->
     <div class="container-fluid pt-5">
@@ -248,12 +293,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/bags.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids16.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Bags</h6>
+                        <h6 class="text-truncate mb-3">Toys</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>799.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>799.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -265,12 +310,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/watch.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids17.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Watches</h6>
+                        <h6 class="text-truncate mb-3">Feeders</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>1249.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>1249.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -282,12 +327,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/headphones.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids18.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Headphones</h6>
+                        <h6 class="text-truncate mb-3">Diapers</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>1999.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>1999.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -299,12 +344,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/belt.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids19.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Belts</h6>
+                        <h6 class="text-truncate mb-3">Kids Swing</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>599.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>599.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -316,12 +361,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/flipflop.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids20.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Flip-flops</h6>
+                        <h6 class="text-truncate mb-3">Footwear</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>499.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>499.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -333,12 +378,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/perfume.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids21.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Perfumes</h6>
+                        <h6 class="text-truncate mb-3">Kids Walker</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>999.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>999.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -350,12 +395,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/shaving.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids22.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Shaving Essentials</h6>
+                        <h6 class="text-truncate mb-3">Bow clip</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>299.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>299.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -367,12 +412,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/trimmers.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids23.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Trimmers</h6>
+                        <h6 class="text-truncate mb-3">Baby's accesories</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>799.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>799.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -384,7 +429,6 @@
         </div>
     </div>
     <!-- Products End -->
-
 
     <!-- Subscribe Start -->
     <div class="container-fluid bg-secondary my-5">
@@ -407,8 +451,7 @@
     </div>
     <!-- Subscribe End -->
 
-
-    <!-- Products Start -->
+    <!-- Just Arrived Start -->
     <div class="container-fluid pt-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Just Arrived</span></h2>
@@ -417,12 +460,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/denims jackets.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids24.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3">Denim Jackets</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>1599.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>1599.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -434,12 +477,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/joggers.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids25.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Printed Joggers</h6>
+                        <h6 class="text-truncate mb-3">Party Wear Dress</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>1099.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>1099.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -451,12 +494,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/biker jackets.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/kids/kids26.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Bikers Jackets</h6>
+                        <h6 class="text-truncate mb-3">Baby's Bed</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>1299.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>1299.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -468,12 +511,12 @@
             <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div class="card product-item border-0 mb-4">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/Mens/chinos.jpg" alt="">
+                        <img class="img-fluid w-100" src="{% static 'img/Mens/chinos.jpg' %}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3">Slim Fit Chinos</h6>
                         <div class="d-flex justify-content-center">
-                            <h6><i class="fa fa-inr"></i>899.00</h6><h6 class="text-muted ml-2"><del><i class="fa fa-inr"></i>123.00</del></h6>
+                            <h6><i class="fa fa-inr"></i>899.00</h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
@@ -482,7 +525,9 @@
                     </div>
                 </div>
             </div>
-           
+        </div>
+    </div>
+    <!-- Just Arrived End -->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
@@ -501,23 +546,23 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                            <a class="text-dark mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="{% url 'Shop' %}"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="{% url 'detail' %}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-dark mb-2" href="{% url 'cart' %}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="{% url 'checkout' %}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                            <a class="text-dark mb-2" href="{% url 'index' %}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="{% url 'Shop' %}"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
+                            <a class="text-dark mb-2" href="{% url 'detail' %}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-dark mb-2" href="{% url 'cart' %}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="{% url 'checkout' %}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="{% url 'contact' %}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
@@ -527,8 +572,7 @@
                                 <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                                    required="required" />
+                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email" required="required" />
                             </div>
                             <div>
                                 <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
@@ -541,35 +585,24 @@
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">E Luxuria</a>. All Rights Reserved. Designed by <a class="text-dark font-weight-semi-bold" href="">KUMAR MOHIT</a>
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
+                <img class="img-fluid" src="{% static 'img/payments.png' %}" alt="">
             </div>
         </div>
     </div>
     <!-- Footer End -->
 
-
-    <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
-
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+    <script src="{% static 'mail/contact.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
-
 </html>
